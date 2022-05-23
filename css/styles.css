@@ -1,0 +1,64 @@
+/* @formatter:off */
+:root {
+    --bylan-green: #378e9d;
+    --bylan-pink: #af1e94;
+    --bylan-purple: #61167b;
+
+    --bylan-primaryBg: #1F2937;
+    --bylan-primaryFont: #fff;
+    --bylan-secondaryBg: #111827;
+    --bylan-secondaryFont: #dedede;
+}
+
+* {  margin: 0; padding: 0; box-sizing: border-box; }
+
+body {  margin: 0 auto; color: var(--bylan-primaryFont); background-color: var(--bylan-primaryBg); font-family: sans-serif; }
+h1, h2  { text-align:left; padding: 20px 0; letter-spacing: 0.11em; text-transform: uppercase; width: 95%; }
+header > a,
+footer > a,
+img.logo { width: 80px; }
+header a:first-of-type img {padding-top: 10px; padding-bottom: 5px;}
+main { padding: 20px; width: 95%; }
+main > h1, main p.intro { margin: 0;}
+ul { list-style-type: none; display: flex; justify-content: space-evenly; }
+
+div.loader {
+    content: url("../media/loader.gif");
+    margin: 0 auto;
+}
+
+p.intro { padding-bottom: 40px; overflow: hidden; max-width: 71ch; line-height: 1.5em; }
+main { padding-top: 150px;}
+section { display: flex; flex-wrap: wrap; max-width: 100%; }
+section.socials { padding: 20px;}
+main div.row-item { background-color: var(--bylan-secondaryBg); }
+section.content, main div.row-item p { width: 100%; padding: 5px 0; text-align: center; }
+section.content, main div.row { max-width: 100%; display: flex; flex-wrap: wrap; gap:20px; padding-bottom: 60px; margin: 0;  }
+section.content, main div.left-align:last-of-type p { margin: 0; text-align: left; padding: 20px; line-height: 1.5em; max-width: 80ch; overflow: hidden; }
+section.content, main div.row:last-of-type { max-width:620px; }
+
+div.row-wrapper { display: block; flex-direction: column; }
+section.socials-home { height:auto;}
+section.socials-home h2 { align-self: flex-start;}
+form { display: flex; flex-direction: column;}
+
+/*   BREAKPOINTS  */
+@media only screen and (max-width: 638px) {
+    main div.row-item { margin: 0 auto; }
+    main > h1, main > h2, main p.intro { text-align:center; margin: 0 auto;}
+}
+
+@media only screen and (min-width: 640px) {
+    section.content, main div.row { width: 700px; }
+}
+
+@media only screen and (min-width: 1280px) {
+    div.row-wrapper { display: flex; flex-direction: row; }
+    section.socials-home { height:55vh;}
+    section.socials-home h2 { align-self: flex-end;}
+    section.content, main div.row { width: 1600px; }
+}
+
+@media only screen and (min-width: 640px) {
+    section.content, main div.row { max-width: 1300px; }
+}

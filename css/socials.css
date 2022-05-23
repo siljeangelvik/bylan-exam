@@ -1,0 +1,71 @@
+
+section.socials { max-width: 100%; margin: 40px 0;}
+section.socials div.row {
+    width: 95%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+section.socials div.row i {
+    font-size: 2.3rem;
+    filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.5));
+    transition: transform 500ms ease-out;
+}
+
+section.socials div.row i:hover {
+    transform: translate(0px, -5px);
+    filter: drop-shadow(6px 12px 1px rgba(0, 0, 0, 0.3));
+}
+
+
+.fa-facebook::before {
+    content: "\f09a";
+}
+section.socials div.row i.fa-facebook {
+    background: linear-gradient(225deg, rgba(67,135,208,255) 0%, rgba(28,64,158,255) 100%);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.fa-instagram::before {
+    content: "\f16d";
+}
+.fa-instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.fa-twitch::before {
+    content: "\f1e8";
+}
+.fa-twitch {
+    background: linear-gradient(90deg, rgba(213,140,255,255) 0%, rgba(182,108,255,255) 20%, rgba(145,71,255,255) 100%);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.fa-youtube::before {
+    content: "\f167";
+}
+.fa-youtube {
+    background: radial-gradient(circle, rgba(254,0,0,255) 0%, hsla(0, 81%, 37%, 1) 100%);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.fa-discord::before {
+    content: "\f392";
+}
+.fa-discord {
+    background: linear-gradient(225deg, rgba(76,88,198,255) 0%, rgba(113,135,218,255) 100%);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

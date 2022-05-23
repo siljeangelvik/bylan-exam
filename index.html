@@ -1,0 +1,172 @@
+<!doctype html>
+<!--suppress ALL -->
+<html lang="en">
+<head>
+    <title>Velkommen til ByLan!</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/socials.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/carousel.css">
+    <script src="js/burger-menu.js" defer></script>
+
+    <!--
+    <script src="js/carousel.js" defer></script>
+    -->
+</head>
+<body>
+
+<header class="header-desktop">
+    <a href="index.html">
+        <img class="logo" src="media/logo/img.png" alt="logo">
+    </a>
+    <nav>
+        <a class="active" href="index.html">Forside</a>
+        <a href="about.html">Om oss</a>
+        <a href="posts.html">Poster</a>
+        <a href="contact.html">Kontakt</a>
+    </nav>
+</header>
+
+<header class="header-mobile">
+    <div class="section">
+        <a href="index.html">
+            <img class="logo" src="media/logo/img.png" alt="logo">
+        </a>
+
+        <span id="toggle-button">
+      <i class="fas fa-bars fa-2x"></i>
+            <strong>MENY</strong>
+    </span>
+    </div>
+
+    <nav class="nav-mobile">
+        <div id="toggle-element">
+            <a class="active" href="index.html">Forside</a>
+            <a href="about.html">Om oss</a>
+            <a href="posts.html">Poster</a>
+            <a href="contact.html">Kontakt</a>
+        </div>
+    </nav>
+</header>
+
+
+
+<article>
+
+    <p class="consoleMsg"></p>
+    <div class="carousel">
+        <div class="slide active" id="slide1">slide 1</div>
+        <div class="slide" id="slide2">slide 2</div>
+        <div class="slide" id="slide3">slide 3</div>
+        <div class="slide" id="slide4">slide 4</div>
+        <div class="slide" id="slide5">slide 5</div>
+
+        <button class="btn btn-next"> ></button>
+        <button class="btn btn-prev"> <</button>
+    </div>
+    <div class="loader"></div>
+</article>
+
+<div class="row-wrapper">
+    <main>
+        <h1>Velkommen til ByLan Bergen</h1>
+        <p class="intro">ByLAN er et dataparty som arrangeres i høstferien i Bergen.
+            ByLAN Bergen er en frivillig organisasjon som ånder, og lever for å skape et godt spillmiljø,
+            skape et fantastisk kulturtilbud og by på gode minner. ByLAN har blitt arrangert hvert år siden 2002.
+        </p>
+        <p class="intro">Fram til 2005 ble det arrangert i Bergen Racketsenter på Bønes.
+            I 2006, 2007 og 2008 i Arenum Messesenter, mens det i 2009 vendte tilbake til Bergen Racketsenter. Her ble
+            vi
+            værende til 2015, da vi arrangerte i Vestlandshallen, hvor vi arrangerte for hele 1200 deltakere!
+            Dessverre i 2017 måtte vi vemodig avlyse arrangementet, men vi er nå tilbake til der vi trives best og
+            alltid
+            har storkost oss: nemlig Bergen Racketsenter!</p>
+    </main>
+
+    <section class="socials socials-home">
+        <h2>Følg oss gjerne!</h2>
+        <div class="row">
+            <a href="https://www.facebook.com/BylanBergen/"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/bylan_bergen/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.twitch.tv/bylan/videos"><i class="fab fa-twitch"></i></a>
+            <a href="https://www.youtube.com/channel/UCZkdFExCkcgBE1p49b1_8mw"><i class="fab fa-youtube"></i></a>
+            <a href="https://discord.gg/6qnKn5Q6xf"><i class="fab fa-discord"></i></a>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <div class="row">
+        <a href="index.html">
+            <img class="logo" src="media/logo/img.png" alt="logo">
+        </a>
+
+        <div>
+            <p><a href="mailto:info@bylan.net"><i class="fas fa-inbox mx-3"></i>&nbsp; info@bylan.net</a>
+            <p><a href="tel:92653403"><i class="fas fa-phone mx-3"></i>&nbsp; +47 926 53 403</a></p>
+        </div>
+    </div>
+
+    <div class="row">
+        <p>Copyright ©2021 ByLAN. All rights reserved. </p>
+    </div>
+</footer>
+
+<script>
+    const url = 'https://www.avena.dev/exam/wp-json/wp/v2/posts';
+    //const urlMedia = 'https://www.avena.dev/exam/wp-json/wp/v2/media';
+    const urlPostImg = 'https://www.avena.dev/exam/wp-json/wp/v2/posts?_embed';
+    let out = document.querySelector('#postsContainer');
+
+    fetch(url)
+        .then(response => response.json())
+        .then(parsedData => {
+            console.log(parsedData);
+            parsedData.length = 3;
+            carouselData();
+        })
+        .catch((error) => out.innerHTML = "Something's wrong!" + error)
+        .finally(() => document.querySelector(".loader").remove());
+
+/*
+    function listData(posts) {
+        posts.length = 5;
+        console.log(`POSTS LENGTH =  ` + posts.length);
+
+        posts.forEach((post) => {
+            out.innerHTML +=
+                `<div id="postsItem" class="item">
+               <div id="postsInnerItem">
+               <a class="postsTitle" href="details.html?guid=${post.id}">
+                        <h3 id="postsTitle">${post.title.rendered}</h3>
+                  </a>
+                  <p id="postsExcerpt">${post.excerpt.rendered}</p>
+                  <a id="postsLink" href="details.html?guid=${post.id}">Les mer..</a>
+                </div>
+                </div>`;
+
+            out.style.backgroundImage = urlPostImg;
+            out.style.backgroundRepeat = "no-repeat";
+        })
+    }
+    */
+
+    function carouselData(slides) {
+        slides.length = 3;
+
+        url[0] = document.getElementById('slide1');
+        url[1] = document.getElementById('slide2');
+        url[2] = document.getElementById('slide3');
+    }
+</script>
+</body>
+</html>

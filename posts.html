@@ -1,0 +1,195 @@
+<!doctype html>
+<!--suppress ALL -->
+<html lang="en">
+<head>
+    <title></title>
+    <meta name="description" content="Her finner du folka bak ByLAN,
+    og vi er alle like glad i gaming som dere.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/posts.css">
+    <link rel="stylesheet" href="css/socials.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/burger-menu.js" defer></script>
+    <script src="js/posts-loadmore.js" defer></script>
+</head>
+<body>
+
+<header class="header-desktop">
+    <a href="index.html">
+        <img class="logo" src="media/logo/img.png" alt="logo">
+    </a>
+    <nav>
+        <a href="index.html">Forside</a>
+        <a href="about.html">Om oss</a>
+        <a class="active" href="posts.html">Poster</a>
+        <a href="contact.html">Kontakt</a>
+    </nav>
+</header>
+
+<header class="header-mobile">
+    <div class="section">
+        <a href="index.html">
+            <img class="logo" src="media/logo/img.png" alt="logo">
+        </a>
+
+        <span id="toggle-button">
+      <i class="fas fa-bars fa-2x"></i>
+            <strong>MENY</strong>
+    </span>
+    </div>
+
+    <nav class="nav-mobile">
+        <div id="toggle-element">
+            <a href="index.html">Forside</a>
+            <a href="about.html">Om oss</a>
+            <a class="active" href="posts.html">Poster</a>
+            <a href="contact.html">Kontakt</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <h1>Poster</h1>
+    <p class="intro">Vi prøver så godt vi kan å holde dere jevnlig oppdatert!</p>
+    <div id="postsContainer">
+        <strong id="postLink"></strong>
+    </div>
+    <p class="loader"></p>
+
+    <div id="loadMore">Last inn</div>
+</main>
+
+<section class="socials">
+    <h2>Følg oss gjerne!</h2>
+    <div class="row">
+        <a href="https://www.facebook.com/BylanBergen/"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/bylan_bergen/"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.twitch.tv/bylan/videos"><i class="fab fa-twitch"></i></a>
+        <a href="https://www.youtube.com/channel/UCZkdFExCkcgBE1p49b1_8mw"><i class="fab fa-youtube"></i></a>
+        <a href="https://discord.gg/6qnKn5Q6xf"><i class="fab fa-discord"></i></a>
+    </div>
+</section>
+
+<footer>
+    <div class="row">
+        <a href="index.html">
+            <img class="logo" src="media/logo/img.png" alt="logo">
+        </a>
+
+        <div>
+            <p><a href="mailto:info@bylan.net"><i class="fas fa-inbox mx-3"></i>&nbsp; info@bylan.net</a>
+            <p><a href="tel:92653403"><i class="fas fa-phone mx-3"></i>&nbsp; +47 926 53 403</a></p>
+        </div>
+    </div>
+
+    <div class="row">
+        <p>Copyright ©2021 ByLAN. All rights reserved. </p>
+    </div>
+</footer>
+
+<script>
+
+    /*
+    items.forEach(function (item, index) {
+        console.log(item.innerText, index);
+        if (index > maxItems - 1) {
+            item.classList.add(hiddenPosts);
+        }
+    });
+
+    items.forEach(function (item, index) {
+        console.log(item.innerText, index);
+        if (index > maxItems - 1) {
+            item.classList.add(hiddenPosts);
+        }
+    });
+
+
+    loadMore.addEventListener('click', function () {
+        [].forEach.call(document.querySelectorAll('.' + hiddenPosts), function (item, index) {
+            if (index < loadItems) {
+                item.classList.remove(hiddenPosts);
+            }
+            if (document.querySelectorAll('.' + hiddenPosts).length === 0) {
+                loadMore.style.display = 'none';
+            }
+        })
+    })
+*/
+
+
+    /*
+        $(function(){
+            $("div").slice(0, 10).show(); // select the first ten
+            $("#load").click(function(e){ // click event for load more
+                e.preventDefault();
+                $("div:hidden").slice(0, 10).show(); // select next 10 hidden divs and show them
+                if($("div:hidden").length == 0){ // check if any hidden divs still exist
+                    alert("No more divs"); // alert if there are none left
+                }
+            });
+        });
+    */
+    /*
+        function loadData(posts) {
+
+            if (posts.length == 6) {
+                loadMore.forEach(post => {
+                    post.style.display = 'block';
+                });
+            } else {
+                loadMore.style.display = 'none';
+            }
+
+            loadMore.slice(0, 5).show(); // select first 5
+            loadMore.click(function (e) { // click event for load more
+                e.preventDefault();
+                loadMore.slice(0, 5).show(); // select next 5 hidden divs and show them
+                if (posts.length == 0) { // check if any hidden divs still exsist
+                    loadMore.style.display = 'none'; // button hide if no more posts exist
+                }
+            })
+        }
+        */
+
+
+
+    /*
+    const url = 'https://www.avena.dev/exam/wp-json/wp/v2/posts';
+    const out = document.querySelector('#postsContainer');
+
+    fetch(url)
+        .then(response => response.json())
+        .then(parsedData => {
+            listData(parsedData.data);
+        })
+        .catch((error) => out.innerHTML = "Something's wrong!" + error)
+        .finally(() => document.querySelector(".loader").remove());
+
+    function listData(posts) {
+        console.log(posts);
+
+        posts.forEach((post) => {
+
+            out.innerHTML +=
+                `<div>
+                  <a href="details.html?guid=${post.id}">
+                        <h3>${post.title.rendered}</h3>
+                  </a>
+                        <p>${post.excerpt.rendered}</p>
+                </div>`;
+        })
+    }
+*/
+</script>
+
+</body>
+</html>

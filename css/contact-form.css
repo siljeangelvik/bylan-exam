@@ -1,0 +1,16 @@
+/* @formatter:off */
+main {width: 70%;}
+div.contact-form, div.row-item { margin: 0; width: 50%;}
+p, a { color: var(--bylan-primaryFont); }
+a {font-weight: bolder; text-decoration:none; }
+form { padding: 20px; max-width: 100%;}
+form h2, form h3 {padding: 20px 0; letter-spacing: 0.1em;}
+form label {padding: 20px 0; letter-spacing: 0.1em; }
+form input {padding: 8px; border:none; background-color: var(--bylan-primaryBg); }
+form textarea { border:none; background-color: var(--bylan-primaryBg);}
+form button {font-weight: bolder; text-transform: uppercase; letter-spacing: .2em; margin-top:25px; padding: 10px; background-color: var(--bylan-green); border:none; color: var(--bylan-primaryFont); }
+
+@media only screen and (max-width: 1280px) {
+    main {width: 100%;} div.contact-form, div.row-item { margin: 0 auto; width: 100%;}
+
+}

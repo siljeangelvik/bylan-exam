@@ -1,0 +1,55 @@
+/* @formatter:off */
+header.header-mobile {
+    min-width: 300px;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    width: 90%;
+}
+
+header.header-mobile,
+header.header-mobile div.section {background: var(--bylan-secondaryBg);display: flex;position: fixed;z-index: 222;}
+header.header-mobile div.section {justify-content: space-between;align-items: center;min-width: 100%;}
+header.header-mobile span {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    cursor: pointer;
+    max-width: 90px;
+}
+
+header.header-mobile div#toggle-element {position: fixed;margin: 95px 0;width: 100%;direction: rtl;}
+header.header-mobile div#toggle-element > a {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: var(--bylan-secondaryBg);
+    color: var(--bylan-primaryFont);
+    font-family: fontMedium, sans-serif;
+    letter-spacing: .2em;
+    line-height: 1.7em;
+}
+
+header.header-desktop,
+div#toggle-element { display: none; }
+header.header-mobile span i { padding: 0 5px 5px 0; }
+header.header-mobile span strong { font-size: 13px; }
+header.header-mobile div#toggle-element > a { margin-bottom: 2px; background: var(--bylan-secondaryBg);}
+header.header-mobile div#toggle-element > a:hover,
+header.header-mobile div#toggle-element > a.active {right:0; background: linear-gradient(90deg, rgb(55, 142, 157), rgb(175, 30, 148), rgb(97, 22, 123)); }
+
+header {margin-left: -10px;margin-right: -10px;}
+footer section {display: flex;flex-wrap: wrap;align-items: center;justify-content: center;}
+footer {text-align: center;}
+
+@media only screen and (min-width: 640px) {
+    header.header-mobile div#toggle-element > a {
+        width: 50%;
+    }
+}

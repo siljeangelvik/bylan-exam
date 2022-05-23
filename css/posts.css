@@ -1,0 +1,73 @@
+#postsContainer,
+#postsItem,
+#postsInnerItem,
+a.postsTitle,
+#postsTitle,
+#postsExcerpt,
+#postsLink {
+    color: var(--bylan-primaryFont);
+    letter-spacing: 0.02em;
+}
+
+#postsContainer {
+    /* border: 1px solid white; /**/
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#postsItem {
+    /*  THIS DIV GONNA HAVE BG-PHOTO /**/
+    height: 280px;
+    border: 1px solid white; /**/
+    background-color: var(--bylan-secondaryBg); /**/
+}
+
+#postsInnerItem {
+    /* MIGHT USE HIGHER Z-INDEX /**/
+    /* BUT BG-COLOR IS PROBABLY ENOUGH /**/
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    /* border: 1px solid white; /**/
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bylan-primaryBg); /**/
+}
+
+a.postsTitle {
+    text-decoration: none;
+    text-underline: none;
+}
+
+#postsTitle {
+    text-decoration: none;
+    text-underline: none;
+}
+
+#postsExcerpt {
+}
+
+#postsLink {
+    font-weight: bolder;
+}
+
+
+/* LOAD MORE BUTTON */
+#loadMore {
+    width: 100%;
+    padding: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    font-weight: bold;
+    text-align: center;
+    margin: 40px 0;
+    cursor: pointer;
+    background: linear-gradient(90deg, rgb(55, 142, 157), rgb(175, 30, 148), rgb(97, 22, 123));
+}
+
+.loadMoreHidden {
+    display: none;
+}
