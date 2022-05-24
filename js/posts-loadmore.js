@@ -26,7 +26,7 @@ function listData(posts) {
                         <h3 id="postsTitle">${post.title.rendered}</h3>
                   </a>
                   <p id="postsExcerpt">${post.excerpt.rendered}</p>
-                  <a id="postsLink" href="details.html?guid=${post.id}">Les mer..</a>
+                  <a id="postsLink" href="details.html?guid=${post.id}" style="width: 100%;">Les mer..</a>
                 </div>
                 </div>`;
 

@@ -1,3 +1,4 @@
+/* @formatter:off */
 #postsContainer,
 #postsItem,
 #postsInnerItem,
@@ -9,20 +10,10 @@ a.postsTitle,
     letter-spacing: 0.02em;
 }
 
-#postsContainer {
-    /* border: 1px solid white; /**/
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
+#postsContainer { display: flex; flex-direction: column; gap: 30px; /* border: 1px solid white; /**/ }
 
-#postsItem {
-    /*  THIS DIV GONNA HAVE BG-PHOTO /**/
-    height: 280px;
-    border: 1px solid white; /**/
-    background-color: var(--bylan-secondaryBg); /**/
-}
-
+/*  THIS DIV GONNA HAVE BG-PHOTO /**/
+#postsItem { height: 280px; background-color: var(--bylan-secondaryBg); /**/ /* border: 1px solid white; /**/ }
 #postsInnerItem {
     /* MIGHT USE HIGHER Z-INDEX /**/
     /* BUT BG-COLOR IS PROBABLY ENOUGH /**/
@@ -37,23 +28,10 @@ a.postsTitle,
     background-color: var(--bylan-primaryBg); /**/
 }
 
-a.postsTitle {
-    text-decoration: none;
-    text-underline: none;
-}
-
-#postsTitle {
-    text-decoration: none;
-    text-underline: none;
-}
-
-#postsExcerpt {
-}
-
-#postsLink {
-    font-weight: bolder;
-}
-
+a.postsTitle { text-decoration: none; text-underline: none; }
+#postsTitle { text-decoration: none; text-underline: none; }
+#postsExcerpt {}
+#postsLink { font-weight: bolder; }
 
 /* LOAD MORE BUTTON */
 #loadMore {
@@ -68,6 +46,10 @@ a.postsTitle {
     background: linear-gradient(90deg, rgb(55, 142, 157), rgb(175, 30, 148), rgb(97, 22, 123));
 }
 
-.loadMoreHidden {
-    display: none;
+.loadMoreHidden { display: none; }
+
+/*   BREAKPOINTS  */
+@media only screen and (max-width: 638px) {
+    #postsInnerItem {width: 60%; }
 }
+

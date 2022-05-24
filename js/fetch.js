@@ -19,7 +19,6 @@ fetch(urls[2])
     .then(data => console.log(data))
 
 
-
 const postsUrl = "https://www.avena.dev/exam/wp-json/wp/v2/posts";
 let carousel = document.querySelector('aside');
 
@@ -44,7 +43,6 @@ function postsCarousel(slides) {
 }
 
 
-
 /**
 
    // ?page= : specify the page of results to return.
@@ -64,16 +62,5 @@ function postsCarousel(slides) {
 
 ADDRESS - SOCIALS
     <a href="detail.html?id=${slide.id}"> </a>
-
-
-
-
-
-
-
-
-
-
-
 
 */

@@ -1,0 +1,144 @@
+/* @formatter:off */
+/**** HEADER ****/
+header.header-mobile {
+    min-width: 300px;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    width: 90%;
+}
+
+header.header-mobile,
+header.header-mobile div.section {background: var(--bylan-secondaryBg);display: flex;position: fixed;z-index: 222;}
+header.header-mobile div.section {justify-content: space-between;align-items: center;min-width: 100%;}
+header.header-mobile span {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    cursor: pointer;
+    max-width: 90px;
+}
+
+header.header-mobile div#toggle-element {position: fixed;margin: 95px 0;width: 100%;direction: rtl;}
+header.header-mobile div#toggle-element > a {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: var(--bylan-secondaryBg);
+    color: var(--bylan-primaryFont);
+    font-family: fontMedium, sans-serif;
+    letter-spacing: .2em;
+    line-height: 1.7em;
+}
+
+header.header-desktop,
+div#toggle-element { display: none; }
+header.header-mobile span i { padding: 0 5px 5px 0; }
+header.header-mobile span strong { font-size: 13px; }
+header.header-mobile div#toggle-element > a { margin-bottom: 2px; background: var(--bylan-secondaryBg);}
+header.header-mobile div#toggle-element > a:hover,
+header.header-mobile div#toggle-element > a.active {right:0; background: linear-gradient(90deg, rgb(55, 142, 157), rgb(175, 30, 148), rgb(97, 22, 123)); }
+
+header {margin-left: -10px;margin-right: -10px;}
+footer section {display: flex;flex-wrap: wrap;align-items: center;justify-content: center;}
+footer {text-align: center;}
+
+@media only screen and (min-width: 640px) {
+    header.header-mobile div#toggle-element > a {
+        width: 50%;
+    }
+}
+
+/**** SOCIALS ****/
+div.socials { width: 100%; margin: 40px 0 80px 0; display: flex; justify-content: space-between;}
+
+.socials-home h2 { align-self: flex-start;}
+
+.socials i { font-size: 2.3rem; filter: drop-shadow(1px 1px 5px rgba(0, 0, 0, 0.5)); transition: transform 500ms ease-out; }
+.socials i:hover { transform: translate(0px, -5px); filter: drop-shadow(6px 12px 1px rgba(0, 0, 0, 0.3));}
+
+.fa-facebook::before { content: "\f09a"; }
+.fa-facebook {
+    background: linear-gradient(225deg, rgba(67,135,208,255) 0%, rgba(28,64,158,255) 100%);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.fa-instagram::before { content: "\f16d"; }
+.fa-instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.fa-twitch::before { content: "\f1e8"; }
+.fa-twitch {
+    background: linear-gradient(90deg, rgba(213,140,255,255) 0%, rgba(182,108,255,255) 20%, rgba(145,71,255,255) 100%);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.fa-youtube::before { content: "\f167"; }
+.fa-youtube {
+    background: radial-gradient(circle, rgba(254,0,0,255) 0%, hsla(0, 81%, 37%, 1) 100%);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.fa-discord::before { content: "\f392"; }
+.fa-discord {
+    background: linear-gradient(225deg, rgba(76,88,198,255) 0%, rgba(113,135,218,255) 100%);
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/**** FOOTER ****/
+footer {width: 100%;margin: 0;background-color: var(--bylan-secondaryBg);}
+footer a:first-of-type,
+footer a:first-of-type img {display: flex;text-align: left;}
+footer div.row a {font-weight: bolder;text-decoration: none;color: var(--bylan-primaryFont);}
+footer div.row {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer div.row:first-of-type {padding: 10px 20px 0 0;}
+footer div.row div {text-align: left;line-height: 1.4em;}
+footer div.last-row {
+    font-size: 14px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 680px) {
+    footer div.row {
+        width: 95%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        padding: 10px 30px 15px 0;
+    }
+    footer div.row div {padding: 20px 0 0 15px;width: 95%;line-height: 1.4em;}
+    footer div.last-row {margin-top: 4px;}
+}

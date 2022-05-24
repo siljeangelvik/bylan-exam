@@ -23,41 +23,49 @@ header a:first-of-type img { padding-top: 10px; padding-bottom: 5px;}
 main { margin-top:120px; padding: 0 20px;}
 ul { list-style-type: none; display: flex; justify-content: space-evenly; }
 div.loader { content: url("../media/loader.gif"); margin: 0 auto; }
+main.mainHome {padding: 0; margin: 0;}
 main.mainHome,
 main.mainAbout { min-width:300px; max-width: 1280px; }
+
 p.intro { padding-bottom: 40px; overflow: hidden; max-width: 71ch; line-height: 1.5em; }
-div.row-wrapper { display: block; flex-direction: column; }
-div.row { display: flex; flex-wrap: wrap; justify-content: left; padding-bottom: 60px; max-width: 100%; gap:20px; }
+div.row-wrapper,
+div.row { display: flex; flex-wrap: wrap; flex-direction: row;}
+
+div.row { justify-content: left; padding-bottom: 60px; max-width: 100%; gap:20px; }
+div.row-dual { display: flex; flex-direction: row; justify-content: left; max-width: 100%; gap:20px; }
+
 div.row-item { background-color: var(--bylan-secondaryBg); }
+div.col-item { }
 section { display: flex; flex-wrap: wrap; max-width: 100%; }
-main.mainAbout div.left-align:last-of-type p, section.content { padding: 20px; line-height: 1.5em; max-width: 80ch; overflow: hidden; }
-section.content, main div.row:last-of-type { max-width:620px; }
+main.mainAbout div.left-align:last-of-type p { padding: 20px; line-height: 1.5em; max-width: 80ch; overflow: hidden; }
+main div.row:last-of-type { max-width:620px; }
 
 /* ABOUT PAGE */
 main.mainAbout div.row-item p { width: 100%; padding: 5px 0; text-align: center;  }
-main.mainAbout div.row:last-of-type p { text-align: left;}
+main.mainAbout div.row-item:last-of-type p { text-align: left;}
+
 
 /*   BREAKPOINTS  */
 @media only screen and (max-width: 638px) {
+    main {width: 90%;}
     main h2 {width: 100%; text-align: center; }
     div.row,
     div.row-item,
     main > h1, main > h2 { margin: 0 auto;}
-   /* h1, h2, p.intro { text-align: center;} /**/
+
+    /* h1, h2, p.intro { text-align: center;} /**/
 }
 
 /* Use to avoid row with 3 and 2 on about page */
 @media only screen and (min-width: 640px) {
-  /*  section.content, main div.row { width: 700px; }  /**/
+    main {margin: 120px auto 0 auto; }
+    main div.row { width: 700px; }  /**/
 }
 
 @media only screen and (min-width: 1280px) {
-    div.row-wrapper { display: flex; flex-direction: row; }
-    section.socials-home { height:55vh;}
-    section.socials-home h2 { align-self: flex-end;}
-    section.content, main div.row { width: 1600px; }
+    main div.row { width: 1600px; }
 }
 
 @media only screen and (min-width: 640px) {
-    section.content, main div.row { max-width: 1300px; }
+    main div.row { max-width: 1300px; }
 }
