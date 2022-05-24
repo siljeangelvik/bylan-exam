@@ -104,7 +104,6 @@ div.socials { width: 100%; margin: 40px 0 80px 0; display: flex; justify-content
     -webkit-text-fill-color: transparent;
 }
 
-
 /**** FOOTER ****/
 footer {width: 100%;margin: 0;background-color: var(--bylan-secondaryBg);}
 footer a:first-of-type,

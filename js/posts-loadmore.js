@@ -14,6 +14,11 @@ fetch(url)
     .finally(() => document.querySelector(".loader").remove());
 
 
+
+
+
+
+
 function listData(posts) {
     posts.length = 5;
     console.log(`POSTS LENGTH =  ` + posts.length);
@@ -37,6 +42,9 @@ function listData(posts) {
 
 
 /*
+SLICE 0,3 (SLIDER)
+SLICE 0,5 (?) (LOAD MORE)
+
 * Need to fetch images / featured_media
 * Need to add event listener to btn, that will fetch the next 5 posts in the url array
 * */

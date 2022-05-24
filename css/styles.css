@@ -26,14 +26,11 @@ div.loader { content: url("../media/loader.gif"); margin: 0 auto; }
 main.mainHome {padding: 0; margin: 0;}
 main.mainHome,
 main.mainAbout { min-width:300px; max-width: 1280px; }
-
 p.intro { padding-bottom: 40px; overflow: hidden; max-width: 71ch; line-height: 1.5em; }
 div.row-wrapper,
 div.row { display: flex; flex-wrap: wrap; flex-direction: row;}
-
 div.row { justify-content: left; padding-bottom: 60px; max-width: 100%; gap:20px; }
 div.row-dual { display: flex; flex-direction: row; justify-content: left; max-width: 100%; gap:20px; }
-
 div.row-item { background-color: var(--bylan-secondaryBg); }
 div.col-item { }
 section { display: flex; flex-wrap: wrap; max-width: 100%; }
@@ -44,7 +41,6 @@ main div.row:last-of-type { max-width:620px; }
 main.mainAbout div.row-item p { width: 100%; padding: 5px 0; text-align: center;  }
 main.mainAbout div.row-item:last-of-type p { text-align: left;}
 
-
 /*   BREAKPOINTS  */
 @media only screen and (max-width: 638px) {
     main {width: 90%;}
@@ -52,7 +48,6 @@ main.mainAbout div.row-item:last-of-type p { text-align: left;}
     div.row,
     div.row-item,
     main > h1, main > h2 { margin: 0 auto;}
-
     /* h1, h2, p.intro { text-align: center;} /**/
 }
 

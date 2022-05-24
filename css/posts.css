@@ -5,11 +5,7 @@
 a.postsTitle,
 #postsTitle,
 #postsExcerpt,
-#postsLink {
-    color: var(--bylan-primaryFont);
-    letter-spacing: 0.02em;
-}
-
+#postsLink { color: var(--bylan-primaryFont); letter-spacing: 0.02em; }
 #postsContainer { display: flex; flex-direction: column; gap: 30px; /* border: 1px solid white; /**/ }
 
 /*  THIS DIV GONNA HAVE BG-PHOTO /**/
