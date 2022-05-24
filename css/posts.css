@@ -50,6 +50,6 @@ a.postsTitle { text-decoration: none; text-underline: none; }
 
 /*   BREAKPOINTS  */
 @media only screen and (max-width: 638px) {
-    #postsInnerItem {width: 60%; }
+   #postsItem, #postsInnerItem {width: 100%; }
 }
 
