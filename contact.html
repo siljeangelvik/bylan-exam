@@ -14,10 +14,12 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/socials.css">
+    <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/carousel.css">
     <link rel="stylesheet" href="css/contact-form.css">
     <script src="js/burger-menu.js" defer></script>
+    <script src="js/contact.js" defer></script>
 </head>
 <body>
 
@@ -56,30 +58,50 @@
 </header>
 
 <div class="row-wrapper">
-    <main>
-        <h1>Lurer du på noe?</h1>
-        <p class="intro">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, vel!</p>
-
-        <div class="row contact-form">
-            <div class="row-item">
-                <!-- Form which will send a POST request to the current URL -->
-                <form method="post">
-                    <h3>Send oss en melding</h3>
-                    <label for="firstName">Fornavn:</label>
-                    <input id="firstName" name="submitted-fname" autocomplete="name">
-                    <label for="lastName">Etternavn:</label>
-                    <input id="lastName" name="submitted-lname" autocomplete="name">
-                    <label for="emailAddress">Epost:</label>
-                    <input id="emailAddress" name="submitted-email" autocomplete="name">
-                    <label for="userMessage">Melding:</label>
-                    <textarea id="userMessage" name="submitted-usrMsg" cols="30" rows="10"></textarea>
-
-                    <button>Send</button>
-                </form>
-            </div>
+    <div id="successMessage" style="display:none;">
+        <div>
+            <strong><p>Takk for din tilbakemelding!</p></strong>
+            <p>Vi har motatt meldingen din, og svarer så fort vi kan.</p>
+            <p>Vi snakkes snart!</p>
+            <p><a href="index.html">Tilbake</a></p>
         </div>
+    </div>
+    <main class="contact-main">
+        <h1 id="hideTitle">Lurer du på noe?</h1>
+        <p id="hideText" class="intro">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, vel!</p>
 
-        <div class="row"></div>
+        <div id="hideForm" class="row row-form">
+            <form id="form" onchange="validateInputs()" class="row-item">
+                <h2>Vi vil høre fra deg!</h2>
+
+                <div class="input-field">
+                    <label for="name">Navn:</label>
+                    <input id="name" name="name"  type="text">
+                    <div class="error"></div>
+                </div>
+
+                <div class="input-field">
+                    <label for="email">Epost:</label>
+                    <input id="email" name="email" type="text">
+                    <div class="error"></div>
+                </div>
+
+                <div class="input-field">
+                    <label for="subject">Subject:</label>
+                    <input id="subject" name="subject"  type="text">
+                    <div class="error"></div>
+                    <br>
+                </div>
+
+                <div class="input-field">
+                    <label for="comment">Melding:</label>
+                    <textarea id="comment" name="comment" rows="4" cols="50"></textarea>
+                    <div class="error"></div>
+                </div>
+
+                <button type="submit" onsubmit="validateInputs()" id="button">Send</button>
+            </form>
+        </div>
     </main>
 
     <section class="socials socials-home">

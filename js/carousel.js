@@ -15,7 +15,7 @@ fetch(url)
     .then(response => response.json())
     .then(parsedData => {
         //parsedData.length = 4;
-        carouselSlider(parsedData);
+        changeSlide(parsedData);
         console.log(parsedData);
 
     })
@@ -45,7 +45,7 @@ prevBtn.addEventListener('click', (e) => {
     })
 })
 
-posts = 0; // REMEMBER TO TRY: make it an array with 5 objects
+let posts = 0; // REMEMBER TO TRY: make it an array with 5 objects
 
 // When page loads show first background
 (function() {

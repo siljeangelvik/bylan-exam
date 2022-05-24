@@ -1,4 +1,4 @@
-
+/*
 article {
     border:1px solid var(--bylan-primaryFont);
     height: 100vh;
@@ -17,7 +17,7 @@ article {
     max-width: 800px;
     height: 350px;
     position: relative;
-    /* overflow: hidden; */
+    /* overflow: hidden; /**//*
 }
 
 .slider {
@@ -25,7 +25,7 @@ article {
     max-width: 800px;
     height: 350px;
     position: relative;
-    overflow: hidden;  /* <===  */
+    overflow: hidden;  /* <===  */ /*
     border-radius: 15px;
 }
 
@@ -76,7 +76,7 @@ article {
     right: 2%;
 }
 
-/* The background that is shown */
+/* The background that is shown *//*
 .carouselActive {
     position: absolute;
     max-width:100%;
@@ -84,14 +84,14 @@ article {
     left: 0;
 }
 
-/* Make the background go to the left of the screen */
+/* Make the background go to the left of the screen *//*
 .carouselInactive {
     display: none;
     position: absolute;
     left: -100%;
 }
 
-/* Hide the background and make it go back to the right of the screen */
+/* Hide the background and make it go back to the right of the screen *//*
 .transport {
     display: none;
     position: absolute;
