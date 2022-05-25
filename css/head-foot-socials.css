@@ -56,7 +56,7 @@ footer {text-align: center;}
 }
 
 /**** SOCIALS ****/
-div.socials { display: flex; justify-content: space-around;}
+div.socials {padding:140px 0;  display: flex; justify-content: space-around;}
 div.socials div.row-item {background-color: transparent;}
 .socials-home h2 { align-self: flex-start;}
 

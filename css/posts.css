@@ -1,4 +1,10 @@
 /* @formatter:off */
+
+main.mainPosts {}
+main.mainPosts .row {}
+#loadMore { color: var(--bylan-primaryFont); letter-spacing: 0.02em; }
+
+
 #postsContainer,
 #postsItem,
 #postsInnerItem,
@@ -6,7 +12,7 @@ a.postsTitle,
 #postsTitle,
 #postsExcerpt,
 #postsLink { color: var(--bylan-primaryFont); letter-spacing: 0.02em; }
-#postsContainer { display: flex; flex-direction: column; gap: 30px; /* border: 1px solid white; /**/ }
+#postsContainer { display: flex; flex-direction: column; gap: 30px; } /* border: 1px solid white; /**//* }
 
 /*  THIS DIV GONNA HAVE BG-PHOTO /**/
 #postsItem { height: 280px; background-color: var(--bylan-secondaryBg); /**/ /* border: 1px solid white; /**/ }
@@ -44,7 +50,7 @@ a.postsTitle { text-decoration: none; text-underline: none; }
 
 .loadMoreHidden { display: none; }
 
-/*   BREAKPOINTS  */
+/*   BREAKPOINTS  *//*
 @media only screen and (max-width: 638px) {
    #postsItem, #postsInnerItem {width: 100%; }
 }

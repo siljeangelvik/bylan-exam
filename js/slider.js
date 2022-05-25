@@ -1,46 +1,28 @@
 
-// Select all slides
-const slides = document.querySelectorAll(".slide");
+let slideNext = document.querySelector(".btn .btn-next");
+let slidePrev = document.querySelector(".btn .btn-prev");
+let slide = document.querySelectorAll(".slider .slide");
+let i = 0;
 
-// loop through slides and set each slides translateX property to index * 100%
-slides.forEach((slide, indx) => {
-    slide.style.transform = `translateX(${indx * 100}%)`;
-});
 
-// current slide counter
-let curSlide = 0;
-// maximum number of slides
-let maxSlide = slides.length - 1;
+slidePrev.onclick = function() {
 
-// add event listener and navigation functionality
-nextSlide.addEventListener("click", function () {
-    // check if current slide is the last and reset current slide
-    if (curSlide === maxSlide) {
-        curSlide = 0;
-    } else {
-        curSlide++;
+    slide[i].classList.remove("active");
+    i--;
+
+    if (i < 0) {
+        i = slide.length - 1;
+    }
+    slide[i].classList.add("active");
+};
+
+slideNext.onclick = function() {
+    slide[i].classList.remove("active");
+    i++;
+
+    if (i >= slide.length) {
+        i = 0;
     }
 
-//   move slide by -100%
-    slides.forEach((slide, indx) => {
-        slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
-    });
-});
-
-// select prev slide button
-const prevSlide = document.querySelector(".btn-prev");
-
-// add event listener and navigation functionality
-prevSlide.addEventListener("click", function () {
-    // check if current slide is the first and reset current slide to last
-    if (curSlide === 0) {
-        curSlide = maxSlide;
-    } else {
-        curSlide--;
-    }
-
-    //   move slide by 100%
-    slides.forEach((slide, indx) => {
-        slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
-    });
-});
+    slide[i].classList.add("active");
+};

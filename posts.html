@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/posts.css">
     <script src="js/burger-menu.js" defer></script>
-    <script src="js/posts.js" defer></script>
+    <script src="js/posts-loadmore.js" defer></script>
     <!--<script src="js/posts-loadmore.js" defer></script>-->
 </head>
 <body>
@@ -54,23 +54,19 @@
     </nav>
 </header>
 
-<main id="mainPosts" class="mainPosts">
+<main class="mainPosts">
     <h1>Poster</h1>
-    <p class="intro"><span>Vi prøver så godt vi kan å holde dere jevnlig oppdatert!</span></p>
-    <div id="postsContainer">
-        <strong id="postLink"></strong>
+    <div class="row">
+        <p class="intro"><span>Vi prøver så godt vi kan å holde dere jevnlig oppdatert!</span></p>
     </div>
-    <p class="loader"></p>
 
-    <div id="loadMore">Last inn</div>
-
-    <div class="row-item socials">
-        <a href="https://www.facebook.com/BylanBergen/"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.instagram.com/bylan_bergen/"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.twitch.tv/bylan/videos"><i class="fab fa-twitch"></i></a>
-        <a href="https://www.youtube.com/channel/UCZkdFExCkcgBE1p49b1_8mw"><i class="fab fa-youtube"></i></a>
-        <a href="https://discord.gg/6qnKn5Q6xf"><i class="fab fa-discord"></i></a>
+    <div class="row posts-row">
+        <div id="outputPosts" class="row"></div>
     </div>
+
+        <p class="loader"></p>
+
+        <div id="loadMore">Last inn</div>
 </main>
 
 <footer>

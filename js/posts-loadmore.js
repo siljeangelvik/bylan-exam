@@ -1,48 +1,106 @@
-const url = 'https://www.avena.dev/exam/wp-json/wp/v2/posts';
-//const urlMedia = 'https://www.avena.dev/exam/wp-json/wp/v2/media';
-const urlPostImg = 'https://www.avena.dev/exam/wp-json/wp/v2/posts?_embed';
+const api = "https://www.avena.dev/exam/wp-json/wp/v2/posts/?_embed=wp:featuredmedia";
+const output = document.querySelector('#outputPosts');
+
+
+fetch(api)
+    .then(respons => respons.json())
+    .then(data => listPosts(data))
+    .catch(error => console.error("This happened: " + error));
+
+function listPosts(posts) {
+
+
+    for (let post of posts) {
+        posts.length = 4;
+        console.log(posts.value)
+        if (post.featured_media > 0) {
+            console.log(post._embedded["wp:featuredmedia"][0]);
+            let imgSrc = post._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url;
+            let altTxt = post._embedded["wp:featuredmedia"][0].alt_text;
+
+            output.innerHTML += `
+            <div class="row-item" style="background-color: var(--bylan-secondaryBg);">
+            <img src="${imgSrc}" alt="${altTxt}">
+            <span style="padding-top: 5px;"><strong>${post.title.rendered}</strong></span>
+            <span>${post.excerpt.rendered}</span>
+            </div>
+            `;
+                output.style.backgroundSize = "60px 120px"; 
+                output.style.background = imgSrc;
+
+                console.log(post);
+
+        } else {
+            output.innerHTML += `<div>[Post id=${post.id} does not have a featured image]</div>`;
+        }
+    }
+}
+
+/*
 let out = document.querySelector('#postsContainer');
+//const url = 'https://www.avena.dev/exam/wp-json/wp/v2/posts';
+const url = "https://www.avena.dev/exam/wp-json/wp/v2/posts/?_embed=wp:featuredmedia";
 
 fetch(url)
-    .then(response => response.json())
-    .then(parsedData => {
-        console.log(parsedData);
-        parsedData.length = 3;
-        // let result = parsedData;
-        listData(parsedData);
-    })
-    .catch((error) => out.innerHTML = "Something's wrong!" + error)
-    .finally(() => document.querySelector(".loader").remove())
+   .then(response => response.json())
+   .then(parsedData => {
+       console.log(parsedData);
+       // parsedData.length = 3;
+       // let result = parsedData;
+       parsedData[0] = firstSlide;
+       parsedData[1] = secondSlide;
+       parsedData[2] = thirdSlide;
+       parsedData[3] = fourthSlide;
+       listData(parsedData);
+
+   })
+   .catch((error) => out.innerHTML = "Something's wrong!" + error)
+   .finally(() => document.querySelector(".loader").remove())
+
+
+function listData (posts) {
+
+   for (let post of posts) {
+       if (post.featured_media > 0) {
+           let imgSrc = post._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url;
+           out.innerHTML += `<img src="${imgSrc}" alt="">`;
+       } else {
+           out.innerHTML += `<div>[Post id=${post.id} does not have a featured image]</div>`;
+       }
+   } }
 
 
 
-let imgSrc = post._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url;
-output.innerHTML += `<div><img src="${imgSrc}" alt=""></div>`;
-
-function listData(posts) {
-
-
-    posts.length = 5;
-    console.log(`POSTS LENGTH =  ` + posts.length);
-
-    posts.forEach((post) => {
-        out.innerHTML +=
-            `<div id="postsItem" class="item">
-               <div id="postsInnerItem">
-               <a class="postsTitle" href="details.html?guid=${post.id}">
-                        <h3 id="postsTitle">${post.title.rendered}</h3>
-                  </a>
-                  <span id="postsExcerpt">${post.excerpt.rendered}</span>
-                  <a id="postsLink" href="details.html?guid=${post.id}">Les mer..</a>
-                </div>
-                </div>`;
-
-        out.style.backgroundImage = '';
-        out.style.backgroundRepeat = "no-repeat";
-    })
+function changeSlide(slides) {
+   for (let slide of slides) {
+       if (slide>25) return slide;
+   }
 }
 
 
+
+/*
+function listData(posts) {
+   posts.length = 5;
+   console.log(`POSTS LENGTH =  ` + posts.length);
+
+   posts.forEach((post) => {
+       out.innerHTML +=
+           `<div id="postsItem" class="item">
+              <div id="postsInnerItem">
+              <a class="postsTitle" href="details.html?guid=${post.id}">
+                       <h3 id="postsTitle">${post.title.rendered}</h3>
+                 </a>
+                 <span id="postsExcerpt">${post.excerpt.rendered}</span>
+                 <a id="postsLink" href="details.html?guid=${post.id}">Les mer..</a>
+               </div>
+               </div>`;
+
+       out.style.backgroundImage = '';
+       out.style.backgroundRepeat = "no-repeat";
+   })
+}
+/**/
 
 
 /*
