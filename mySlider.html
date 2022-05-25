@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box
+        }
+
+        /* Slideshow container */
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+        }
+
+        /* Hide the images by default */
+        .mySlides {
+            display: none;
+        }
+
+        /* Next & previous buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Caption text */
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+            to {
+                opacity: 1
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+<h1>List Posts</h1>
+<!-- Slideshow container -->
+<div id="listPosts" class="slideshow-container">
+
+
+    <!-- Full-width images with number and caption text -->
+    <div id="firstSlide" class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <div class="text">Caption Text</div>
+    </div>
+
+    <div id="secondSlide" class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <div class="text">Caption Two</div>
+    </div>
+
+    <div id="thirdSlide" class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <div class="text">Caption Three</div>
+    </div>
+
+    <div id="fourthSlide" class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <div class="text">Caption Three</div>
+    </div>
+
+    <div id="fifthSlide" class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <div class="text">Caption Three</div>
+    </div>
+
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+
+<script>
+    let url = "https://www.avena.dev/exam/wp-json/wp/v2/posts";
+    let myPosts = document.getElementById("listPosts");
+    let firstSlide = document.getElementById("firstSlide");
+    let secondSlide = document.getElementById("secondSlide");
+    let thirdSlide = document.getElementById("thirdSlide");
+    let fourthSlide = document.getElementById("fourthSlide");
+    let fifthSlide = document.getElementById("fifthSlide");
+
+
+    fetch(url)
+        .then(response => response.json())
+        .then(postsArray => {
+            console.log(postsArray);
+            console.log('FETCHING ALL POSTS ^');
+
+            /*
+            postsArray[0] = firstSlide;
+            postsArray[1] = secondSlide;
+            postsArray[2] = thirdSlide;
+            postsArray[3] = fourthSlide;
+            postsArray[4] = firstSlide; /**/
+
+            firstSlide = postsArray[0];
+            secondSlide = postsArray[1];
+            thirdSlide = postsArray[2];
+            fourthSlide = postsArray[3];
+            fifthSlide = postsArray[4]; /**/
+
+            postsArray.length = 3;
+
+            listPosts(postsArray);
+        })
+
+    /*
+        posts[0] = document.getElementById("firstSlide");
+        posts[1] = document.getElementById("secondSlide");
+        posts[2] = document.getElementById("thirdSlide");
+        */
+
+    function listPosts(posts) {
+        console.log(posts);
+        console.log('LISTING ALL POSTS ^');
+
+        posts.forEach(post => {
+            myPosts.innerHTML += `
+            <div id="slide">
+      <h3>${post.title.rendered}</h3>
+      <p>${post.excerpt.rendered}</p>
+    </div>
+            `;
+        })
+    }
+
+
+    /*   function listPosts(posts) {
+           console.log(posts);
+           console.log('ALL MY POSTS ^');
+
+
+           posts.forEach(post => {
+               myPosts.innerHTML += `
+       <div id="slide">
+         <h3>${post.title.rendered}</h3>
+         <p>${post.excerpt.rendered}</p>
+       </div>
+       `;
+           })
+       }
+   */
+
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.querySelectorAll(".mySlides");
+        let dots = document.querySelectorAll(".dot");
+        if (n > slides.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = slides.length
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+</script>
+</body>
+</html>

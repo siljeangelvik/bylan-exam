@@ -8,13 +8,11 @@ fetch(url)
     .then(parsedData => {
         console.log(parsedData);
         parsedData.length = 3;
+        let result = parsedData;
         listData(parsedData);
     })
     .catch((error) => out.innerHTML = "Something's wrong!" + error)
     .finally(() => document.querySelector(".loader").remove());
-
-
-
 
 
 
@@ -39,6 +37,8 @@ function listData(posts) {
         out.style.backgroundRepeat = "no-repeat";
     })
 }
+
+
 
 
 /*

@@ -17,7 +17,7 @@ const setError = (element, message) => {
     errorDisplay.innerText = message;
     inputField.classList.add('error');
     inputField.classList.remove('success');
-}
+};
 
 const setSuccess = element => {
     const inputField = element.parentElement;
@@ -31,7 +31,7 @@ const setSuccess = element => {
 const isValidEmail = email => {
     const emailPattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
     return emailPattern.test(String(email).toLowerCase());
-}
+};
 
 const validateInputs = () => {
     const nameValue = name.value.trim();
@@ -73,6 +73,18 @@ const validateInputs = () => {
     }
 
 
+    if (name.value !== '' && nameValue.length >= 5 &&
+        email.value !== '' && emailValue.value === email &&
+        subject.value !== '' && subjectValue.length >= 15 &&
+        comment.value !== '' && commentValue.length >= 25) {
+        document.getElementById('successMessage').style.display = 'block';
+        document.getElementById('hideTitle').style.display = 'none';
+        document.getElementById('hideText').style.display = 'none';
+        document.getElementById('hideForm').style.display = 'none';
+    } /**/
+
+
+    /*
     if (document.getElementById('name').value !== '' &&
         document.getElementById('subject').value !== '' &&
         document.getElementById('email').value !== '' &&
@@ -81,5 +93,5 @@ const validateInputs = () => {
         document.getElementById('hideTitle').style.display = 'none';
         document.getElementById('hideText').style.display = 'none';
         document.getElementById('hideForm').style.display = 'none';
-    }
+    } /**/
 };

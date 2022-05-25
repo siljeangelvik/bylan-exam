@@ -63,16 +63,20 @@
 </div>
 
 
-<main class="mainContact">
+<main id="mainContact" class="mainContact">
     <h1 id="hideTitle">Lurer du på noe?</h1>
     <p id="hideText" class="intro">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, vel!</p>
 
     <div id="hideForm" class="row row-form">
-        <form id="form" onchange="validateInputs()" class="row-item">
+        <form id="form" class="row-item"
+              action="mailto:silje.angelvik@stud.noroff.no"
+              method="post"
+              enctype="text/plain"
+              onsubmit="return(validateInputs());">
             <h2>Vi vil høre fra deg!</h2>
 
             <div class="input-field">
-                <label for="name">Navn:</label>
+                <label for="name">For- og Etternavn:</label>
                 <input id="name" name="name" type="text">
                 <div class="error"></div>
             </div>
@@ -96,7 +100,8 @@
                 <div class="error"></div>
             </div>
 
-            <button type="submit" onsubmit="validateInputs()" id="button">Send</button>
+            <button type="submit" id="button" value="Send">
+                SEND</button>
         </form>
     </div>
 

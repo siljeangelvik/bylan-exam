@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/posts.css">
     <script src="js/burger-menu.js" defer></script>
-    <script src="js/posts-loadmore.js" defer></script>
+    <!--<script src="js/posts-loadmore.js" defer></script>-->
 </head>
 <body>
 
@@ -91,8 +91,110 @@
 </footer>
 
 <script>
+    const url = 'https://www.avena.dev/exam/wp-json/wp/v2/posts';
+    const slidesContainer = document.querySelectorAll('.slide');
+    const postsContainer = document.getElementById('postsContainer');
+    const loadButton = document.getElementById('loadMore');
+
+    fetch(url)
+        .then(response => response.json())
+        .then(responseArray => {
+            console.log(responseArray);
+            console.log(' FETCH');
+          //  responseArray.splice(0,6); // get descending order ...
+           // console.log(responseArray);
+        })
+
+    loadButton.addEventListener('click', ev => {
+        ev.preventDefault();
+
+        //  responseArray.splice(0,7);
+        //    responseArray.split(",", 3);
+        responseArray.length = 3; // 3+3..
+
+    })
+
+    loadMore(responseArray);
+
+
+    function loadMore(posts) {
+
+        console.log(posts);
+        console.log(' FUNCTION loadMore(posts)');
+
+        posts.forEach(post => {
+            console.log(post);
+            postsContainer.innerHTML += `
+
+                <h3>${post.title.rendered}</h3>
+                <p>${post.excerpt.rendered}</p>
+                `;
+        })
+
+
+    }
+
 
     /*
+
+             //   let allMySlides = [firstSlide, secondSlide, thirdSlide, fourthSlide];
+
+    responseArray[0] = firstSlide;
+            responseArray[1] = secondSlide;
+            responseArray[2] = thirdSlide;
+            responseArray[3] = fourthSlide;
+
+
+
+    const loadButton = document.getElementById('loadMore');
+
+    loadButton.addEventListener('click', ev => {
+        ev.preventDefault();
+        // loadMore();
+    })
+
+
+    const mySlides = document.querySelectorAll('.slide');
+    const slides = [firstSlide, secondSlide, thirdSlide, fourthSlide];
+
+
+    // infinite for loop
+    for (let i = 5; i > 6; i++) {
+
+        responseArray += i;
+
+        // block of code
+        loadButton.addEventListener('click', ev => {
+            ev.preventDefault();
+        })
+    }
+
+
+
+    function loadMore(posts) {
+        let allSlides = document.querySelectorAll('.slide');
+        console.log(posts);
+        posts.forEach(post => {
+            allSlides.innerHTML = `
+            <h2>${post.title.rendered}</h2>
+            <p>${post.excerpt.rendered}</p>
+    `;
+        })
+
+    }
+
+
+    /*
+
+     const loadMore = () => {
+
+    }
+
+
+
+
+
+
     items.forEach(function (item, index) {
         console.log(item.innerText, index);
         if (index > maxItems - 1) {
