@@ -8,16 +8,20 @@ fetch(url)
     .then(parsedData => {
         console.log(parsedData);
         parsedData.length = 3;
-        let result = parsedData;
+        // let result = parsedData;
         listData(parsedData);
     })
     .catch((error) => out.innerHTML = "Something's wrong!" + error)
-    .finally(() => document.querySelector(".loader").remove());
+    .finally(() => document.querySelector(".loader").remove())
 
 
 
+let imgSrc = post._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url;
+output.innerHTML += `<div><img src="${imgSrc}" alt=""></div>`;
 
 function listData(posts) {
+
+
     posts.length = 5;
     console.log(`POSTS LENGTH =  ` + posts.length);
 
@@ -33,7 +37,7 @@ function listData(posts) {
                 </div>
                 </div>`;
 
-        out.style.backgroundImage = urlPostImg;
+        out.style.backgroundImage = '';
         out.style.backgroundRepeat = "no-repeat";
     })
 }
