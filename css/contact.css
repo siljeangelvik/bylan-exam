@@ -83,7 +83,6 @@
     height: 400px;
     margin: 0 auto;
     top:100px;
-
 }
 
 #successMessage p { line-height: 1.5em; letter-spacing: 0.07em; }
@@ -115,19 +114,8 @@ textarea:focus, input:focus { color: var(--bylan-primaryFont); }
 .input-field.error input, .input-field.error textarea { border-color: var(--inputError); }
 main.contact-main {flex-direction: column; }
 form.row-item { width: 100%; }
-
-
 div#hideForm.row-form {width: 100%; }
-
 h1#hideTitle, p#hideText.intro {text-align: center; max-width: 100%; }
-
 form#form { display: flex; flex-direction: column; gap:10px; min-width: 300px; width: 600px; background-color: var(--bylan-secondaryBg);}
 form#form div.input-field {}
-form#form div.input-field label { font-weight: bold;letter-spacing: 0.03em;font-size: 16px; line-height: 1.5em;}
-
-
-
-/*   BREAKPOINTS  */
-@media only screen and (max-width: 638px) {
-}
-
+form#form div.input-field label { font-weight: bold;letter-spacing: 0.03em;font-size: 16px; line-height: 1.5em; }
