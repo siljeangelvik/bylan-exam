@@ -43,3 +43,4 @@
 * ####Carousel: [Used](https://blog.logrocket.com/build-image-carousel-from-scratch-vanilla-javascript/)
 * ####Promises: [Codeblock](https://www.demo2s.com/javascript/javascript-promise-composing-promises-and-non-promise-values.html)
 * ####Carousel: [StackOverflow](https://stackoverflow.com/questions/46960391/vanilla-javascript-slider-not-working)
+* ####Codepen: [Link](https://codepen.io/xiaolasse/pen/yLgdLvm?editors=1011)

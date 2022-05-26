@@ -36,7 +36,7 @@ main.mainAbout h2 { width: 100%; text-align: center; }
 main.mainAbout .row-item {height: fit-content; max-width: fit-content; background-color: var(--bylan-secondaryBg);}
 main.mainAbout div.row div.row-item p { width: 100%; padding: 5px 0; text-align: center;  }
 
-main.mainAbout div.row div.left-align { max-width: 700px;}
+main.mainAbout div.row div.left-align { max-width: 700px; margin-bottom: 100px;}
 main.mainAbout div.row div.left-align p { padding: 20px; line-height: 1.5em; width: 100%; overflow: hidden; text-align: center;}
 /*****************/
 

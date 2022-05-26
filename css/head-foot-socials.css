@@ -46,7 +46,7 @@ header.header-mobile div#toggle-element > a:hover,
 header.header-mobile div#toggle-element > a.active {right:0; background: linear-gradient(90deg, rgb(55, 142, 157), rgb(175, 30, 148), rgb(97, 22, 123)); }
 
 header {margin-left: -10px;margin-right: -10px;}
-footer section {display: flex;flex-wrap: wrap;align-items: center;justify-content: center;}
+footer section {display: flex;flex-wrap: wrap; align-items: center;justify-content: center;}
 footer {text-align: center;}
 
 @media only screen and (min-width: 640px) {
