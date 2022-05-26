@@ -3,27 +3,23 @@ const output = document.querySelector('#outputPosts');
 const loadMoreBtn = document.getElementById('loadMore');
 
 let posts = [];
-posts.lenght = 4;
 let i = 0;
 
 
 fetch(api)
     .then(respons => respons.json())
     .then(data => {
-        posts = data;
-    })
+//        posts = data;
+ data.length = 4;
+        listPosts(data);
+})
     .catch(error => console.error("This happened: " + error));
+
 
 
 loadMoreBtn.addEventListener('click', e => {
     e.preventDefault();
-    i++;
 
-    if (posts.length > 4) {
-        i++;
-    }
-
-    listPosts(posts);
 });
 
 
@@ -43,17 +39,28 @@ function listPosts(posts) {
             <span>${post.excerpt.rendered}</span>
             </div>
             `;
-            output.style.backgroundSize = "60px 120px";
-            output.style.background = imgSrc;
+                output.style.backgroundSize = "60px 120px";
+                output.style.background = imgSrc;
 
-            console.log(post);
+                console.log(post);
 
         } else {
             output.innerHTML += `<div>[Post id=${post.id} does not have a featured image]</div>`;
         }
 
+        i++;
+
+    if (i >= 0) {
+        posts.length = 4;
+    }
+
     }
 }
+
+
+
+
+
 
 
 /*
