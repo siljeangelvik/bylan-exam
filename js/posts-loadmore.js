@@ -1,17 +1,35 @@
 const api = "https://www.avena.dev/exam/wp-json/wp/v2/posts/?_embed=wp:featuredmedia";
 const output = document.querySelector('#outputPosts');
+const loadMoreBtn = document.getElementById('loadMore');
+
+let posts = [];
+posts.lenght = 4;
+let i = 0;
 
 
 fetch(api)
     .then(respons => respons.json())
-    .then(data => listPosts(data))
+    .then(data => {
+        posts = data;
+    })
     .catch(error => console.error("This happened: " + error));
 
+
+loadMoreBtn.addEventListener('click', e => {
+    e.preventDefault();
+    i++;
+
+    if (posts.length > 4) {
+        i++;
+    }
+
+    listPosts(posts);
+});
+
+
 function listPosts(posts) {
-
-
     for (let post of posts) {
-        posts.length = 4;
+
         console.log(posts.value)
         if (post.featured_media > 0) {
             console.log(post._embedded["wp:featuredmedia"][0]);
@@ -25,16 +43,18 @@ function listPosts(posts) {
             <span>${post.excerpt.rendered}</span>
             </div>
             `;
-                output.style.backgroundSize = "60px 120px"; 
-                output.style.background = imgSrc;
+            output.style.backgroundSize = "60px 120px";
+            output.style.background = imgSrc;
 
-                console.log(post);
+            console.log(post);
 
         } else {
             output.innerHTML += `<div>[Post id=${post.id} does not have a featured image]</div>`;
         }
+
     }
 }
+
 
 /*
 let out = document.querySelector('#postsContainer');
