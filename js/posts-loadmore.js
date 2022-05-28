@@ -11,6 +11,7 @@ fetch(api)
     .then(data => {
 //        posts = data;
         data.length = 4;
+        posts = data;
         listPosts(data);
     })
     .catch(error => console.error("This happened: " + error));
@@ -49,7 +50,15 @@ function listPosts(posts) {
         }
 
     }
+
 }
+
+i++;
+
+if (i === 0) {
+    posts.length = i++;
+}
+
 
 
 /*

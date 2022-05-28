@@ -26,9 +26,9 @@ const postsSlider = (postsArray) => {
     slider.innerHTML = '';
     for (let [index, post] of postsArray.entries()) {
         const displayPost = index >= i && index <= (i + postItems);
-        let displayPostClass;
+        let displayPostClass = "";
         if (!displayPost) {
-            displayPostClass = "hidden";
+            displayPostClass.style.display = "hidden";
         }
 
         let postImg = post._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url;
@@ -39,11 +39,11 @@ const postsSlider = (postsArray) => {
    <div class="inner-slide row ${displayPostClass}">
      <img src="${postImg}" alt="${altTxt}">
   
-    <div class="inner-slide">
+   <!-- <div class="inner-slide">
     <h3>${post.title.rendered}</h3>
     <p>${post.excerpt.rendered}</p>
     <a href="details.html?id=${post.id}">Les mer..</a>
-    </div>
+    </div>-->
     <div>
     `;
 
