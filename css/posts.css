@@ -1,10 +1,12 @@
 /* @formatter:off */
-
-main.mainPosts {}
-main.mainPosts .row {}
-#loadMore { color: var(--bylan-primaryFont); letter-spacing: 0.02em; }
-
-
+main.main h2 { width: 100%; text-align: center; }
+main.main div.row-item {height: fit-content; max-width: fit-content; background-color: var(--bylan-secondaryBg);}
+main.main div.row div.row-item p { width: 100%; padding: 5px 0; text-align: center;  }
+main.main div.row div.row-item img { margin-left: auto; margin-right: auto; display: block; max-width: fit-content; }
+main.main div.row div.left-align { max-width: 700px; margin-bottom: 100px;}
+main.main div.row div.left-align p { padding: 20px; line-height: 1.5em; width: 100%; overflow: hidden; text-align: center;}
+img { max-width: 310px; }
+#loadMore { color: var(--bylan-primaryFont); letter-spacing: 0.02em; outline: none; border:none; }
 #postsContainer,
 #postsItem,
 #postsInnerItem,
@@ -12,28 +14,25 @@ a.postsTitle,
 #postsTitle,
 #postsExcerpt,
 #postsLink { color: var(--bylan-primaryFont); letter-spacing: 0.02em; }
-#postsContainer { display: flex; flex-direction: column; gap: 30px; } /* border: 1px solid white; /**//* }
+#postsContainer { display: flex; flex-direction: column; gap: 30px; }
 
-/*  THIS DIV GONNA HAVE BG-PHOTO /**/
-#postsItem { height: 280px; background-color: var(--bylan-secondaryBg); /**/ /* border: 1px solid white; /**/ }
+#postsItem { height: 280px; background-color: var(--bylan-secondaryBg); }
 #postsInnerItem {
-    /* MIGHT USE HIGHER Z-INDEX /**/
-    /* BUT BG-COLOR IS PROBABLY ENOUGH /**/
     height: 100%;
     width: 50%;
     display: flex;
     flex-direction: column;
     gap: 5px;
-    /* border: 1px solid white; /**/
     align-items: center;
     justify-content: center;
-    background-color: var(--bylan-primaryBg); /**/
+    background-color: var(--bylan-primaryBg);
 }
 
 a.postsTitle { text-decoration: none; text-underline: none; }
 #postsTitle { text-decoration: none; text-underline: none; }
 #postsExcerpt {}
 #postsLink { font-weight: bolder; }
+.loadMoreHidden { display: none; }
 
 /* LOAD MORE BUTTON */
 #loadMore {
@@ -47,11 +46,3 @@ a.postsTitle { text-decoration: none; text-underline: none; }
     cursor: pointer;
     background: linear-gradient(90deg, rgb(55, 142, 157), rgb(175, 30, 148), rgb(97, 22, 123));
 }
-
-.loadMoreHidden { display: none; }
-
-/*   BREAKPOINTS  *//*
-@media only screen and (max-width: 638px) {
-   #postsItem, #postsInnerItem {width: 100%; }
-}
-

@@ -18,6 +18,9 @@
 .back * { color: var(--bylan-primaryFont); }
 /* FORM & SUCCESS MESSAGE STYLES */
 #form {
+    background-color: var(--bylan-primaryBg);
+    -webkit-box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.3);
+    box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.3);
     row-gap: 15px;
     margin: 0 auto;
     padding: 20px;
@@ -29,19 +32,7 @@
 }
 
 #form h1 { text-align: center; }
-#form button {
-    padding: 10px;
-    margin-top: 10px;
-    width: 100%;
-    color: var(--bylan-primaryFont);
-    background-color: var(--bylan-green);
-    border: none;
-    font-weight: bold;
-    letter-spacing: 0.02em;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-}
+
 
 .input-field { display: flex; flex-direction: column; }
 .input-field input, textarea { border: 2px solid var(--bylan-primaryBg); border-radius: 4px; display: inline-block; font-size: 12px; padding: 8px; }
@@ -84,16 +75,22 @@
     margin: 0 auto;
     top:100px;
 }
-
 #successMessage p { line-height: 1.5em; letter-spacing: 0.07em; }
 #successMessage strong { letter-spacing: 0.07em; }
 #successMessage a {
-    background-color: var(--bylan-green);
     padding: 10px;
     max-width: 300px;
-    letter-spacing: 0.07em;
-    color: var(--bylan-primaryFont);
     box-shadow: 2px 2px var(--bylan-primaryBg);
+    text-decoration: none;
+    width: 100%;
+    color: var(--bylan-primaryFont);
+    background-color: var(--bylan-green);
+    border: none;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 #successMessage button {
@@ -119,3 +116,16 @@ h1#hideTitle, p#hideText.intro {text-align: center; max-width: 100%; }
 form#form { display: flex; flex-direction: column; gap:10px; min-width: 300px; width: 600px; background-color: var(--bylan-secondaryBg);}
 form#form div.input-field {}
 form#form div.input-field label { font-weight: bold;letter-spacing: 0.03em;font-size: 16px; line-height: 1.5em; }
+#form .form-button {
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%;
+    color: var(--bylan-primaryFont);
+    background-color: var(--bylan-green);
+    border: none;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}

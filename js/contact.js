@@ -72,9 +72,8 @@ const validateInputs = () => {
         setSuccess(comment);
     }
 
-
-    if (name.value !== '' && nameValue.length >= 5 &&
-        email.value !== '' && emailValue.value === email &&
+   /* if (name.value !== '' && nameValue.length >= 5 &&
+        email.value !== '' && emailValue.value === true &&
         subject.value !== '' && subjectValue.length >= 15 &&
         comment.value !== '' && commentValue.length >= 25) {
         document.getElementById('successMessage').style.display = 'block';
@@ -84,7 +83,6 @@ const validateInputs = () => {
     } /**/
 
 
-    /*
     if (document.getElementById('name').value !== '' &&
         document.getElementById('subject').value !== '' &&
         document.getElementById('email').value !== '' &&

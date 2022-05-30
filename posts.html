@@ -1,90 +1,75 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <title></title>
-    <meta name="description" content="Her finner du folka bak ByLAN,
-    og vi er alle like glad i gaming som dere.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-          crossorigin="anonymous" referrerpolicy="no-referrer">
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/head-foot-socials.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/posts.css">
-    <script src="js/burger-menu.js" defer></script>
-    <script src="js/posts-loadmore.js" defer></script>
-    <!--<script src="js/posts-loadmore.js" defer></script>-->
-</head>
+    <head>
+        <!-- TITLE, DESCRIPTION -->
+        <title>Poster - ByLan </title>
+        <meta name="description" content="Alle poster, innlegg og nyheter finner du på denne siden.">
+        <!-- FAVICONS -->
+        <link rel="icon" href="/media/favicon/favicon.ico" sizes="any">
+        <link rel="icon" href="/media/favicon/favicon-16x16.png" type="image/svg+xml">
+        <link rel="manifest" href="/media/favicon/site.webmanifest">
+        <!-- VIEWPORT, CHARSET -->
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta charset="UTF-8">
+        <!-- STYLESHEETS -->
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/partials.css">
+        <link rel="stylesheet" href="css/posts.css">
+        <!-- Google Material Icons  &  Font Awesome Icons -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <!-- SCRIPTS -->
+        <script src="js/nav.js" defer></script>
+        <script src="js/posts.js" defer></script>
+    </head>
 <body>
-
-<header class="header-desktop">
-    <a href="index.html">
-        <img class="logo" src="media/logo/img.png" alt="logo">
-    </a>
-    <nav>
-        <a href="index.html">Forside</a>
-        <a href="about.html">Om oss</a>
-        <a class="active" href="posts.html">Poster</a>
-        <a href="contact.html">Kontakt</a>
-    </nav>
-</header>
-
 <header class="header-mobile">
     <div class="section">
         <a href="index.html">
             <img class="logo" src="media/logo/img.png" alt="logo">
         </a>
-
-        <span id="toggle-button">
-      <span class="material-symbols-outlined">
-menu
-</span>
-            <strong>MENY</strong>
-    </span>
+        <span id="toggle-button" class="material-symbols-outlined">menu
+        <strong>MENY</strong>
+        </span>
     </div>
-
     <nav class="nav-mobile">
         <div id="toggle-element">
             <a href="index.html">Forside</a>
             <a href="about.html">Om oss</a>
             <a class="active" href="posts.html">Poster</a>
             <a href="contact.html">Kontakt</a>
+            <a href="report.html">Rapport</a>
         </div>
     </nav>
 </header>
 
-<main class="mainPosts">
+<main class="main">
     <h1>Poster</h1>
     <div class="row">
         <p class="intro"><span>Vi prøver så godt vi kan å holde dere jevnlig oppdatert!</span></p>
     </div>
-
-    <div class="row posts-row">
-        <div id="outputPosts" class="row"></div>
-    </div>
-
-        <p class="loader"></p>
-
-        <button id="loadMore" type="button">Last inn</button>
+    <div id="outputPosts" class="row"></div>
+    <p class="loader"></p>
+    <button id="loadMore" type="button">Last inn</button>
 </main>
 
 <footer>
     <div class="row">
-        <a href="index.html">
-            <img class="logo" src="media/logo/img.png" alt="logo">
-        </a>
-
-        <div>
-            <p><a href="mailto:info@bylan.net"><i class="fas fa-inbox mx-3"></i>&nbsp; info@bylan.net</a>
-            <p><a href="tel:92653403"><i class="fas fa-phone mx-3"></i>&nbsp; +47 926 53 403</a></p>
+        <div class="row-item">
+            <a href="index.html">
+                <img class="logo" src="media/logo/img.png" alt="logo">
+            </a>
         </div>
-    </div>
 
-    <div class="last-row">
-        <p>Copyright ©2021 ByLAN. All rights reserved. </p>
+        <div class="row-item">
+            <p>Copyright ©2021 ByLAN. All rights reserved. </p>
+        </div>
+
+        <div class="row-item">
+            <p><a href="mailto:info@bylan.net"><span class="material-symbols-outlined">call </span> info@bylan.net</a>
+            <p><a href="tel:92653403"><span class="material-symbols-outlined">mail</span> +47 926 53 403</a></p>
+        </div>
     </div>
 </footer>
 </body>
