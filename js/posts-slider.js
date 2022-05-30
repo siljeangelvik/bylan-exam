@@ -7,7 +7,7 @@ const nextBtn = document.querySelector('.btn-next');
 
 
 let postsArray = [];
-let postItems = 0;
+let postItems = 4;
 let i = 0;
 
 
@@ -17,7 +17,7 @@ fetch(url)
         postsArray = data;
         postsSlider(data);
     })
-    .catch(error => console.error("This happened: " + error));
+    .catch(error => console.error("This happened: " + error))
 
 
 const postsSlider = (postsArray) => {
@@ -28,7 +28,7 @@ const postsSlider = (postsArray) => {
         const displayPost = index >= i && index <= (i + postItems);
         let displayPostClass = "";
         if (!displayPost) {
-            displayPostClass.style.display = "hidden";
+            displayPostClass = "hidden";
         }
 
         let postImg = post._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url;
