@@ -1,13 +1,12 @@
 const url = "https://www.avena.dev/exam/wp-json/wp/v2/posts/?_embed=wp:featuredmedia";
 
-
 let slider = document.querySelector('.slide');
 const prevBtn = document.querySelector('.btn-prev');
 const nextBtn = document.querySelector('.btn-next');
 
 
 let postsArray = [];
-let postItems = 4;
+let postItems = 0;
 let i = 0;
 
 
@@ -17,7 +16,7 @@ fetch(url)
         postsArray = data;
         postsSlider(data);
     })
-    .catch(error => console.error("This happened: " + error))
+    .catch(error => console.error("This happened: " + error));
 
 
 const postsSlider = (postsArray) => {
@@ -26,25 +25,26 @@ const postsSlider = (postsArray) => {
     slider.innerHTML = '';
     for (let [index, post] of postsArray.entries()) {
         const displayPost = index >= i && index <= (i + postItems);
-        let displayPostClass = "";
+        let displayPostClass = '';
         if (!displayPost) {
-            displayPostClass = "hidden";
+            displayPostClass = 'hidden';
         }
 
         let postImg = post._embedded["wp:featuredmedia"][0].media_details.sizes.medium.source_url;
         let altTxt = post._embedded["wp:featuredmedia"][0].alt_text;
 
 
+
         let slide = `
-   <div class="inner-slide row ${displayPostClass}">
-     <img src="${postImg}" alt="${altTxt}">
-  
-   <!-- <div class="inner-slide">
+   <div class="inner-slide ${displayPostClass}">
+    <img src="${postImg}" alt="${altTxt}">
+   <div>
+   <!--
+</div>
     <h3>${post.title.rendered}</h3>
     <p>${post.excerpt.rendered}</p>
     <a href="details.html?id=${post.id}">Les mer..</a>
     </div>-->
-    <div>
     `;
 
         slider.innerHTML += slide;
